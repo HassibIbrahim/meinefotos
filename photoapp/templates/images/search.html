@@ -1,7 +1,7 @@
 {%extends 'images/base.html'%}
 {% block content %}
 <div class="container">
-
+<br>
     {% if images%}
       <h2>Found {{ images|length }} of searched term {{message}}</h2>
     {% else %}
@@ -9,7 +9,7 @@
     {% endif %}
 
 
-
+<br>
   {% if images %}
       <div class="card-columns">
 
@@ -44,10 +44,10 @@
     <h2 class="text-center">There is no images here</h2>
   </div>
 
-    {% endfor %}
-  {% endif %}
+        {% endfor %}
+      {% endif %}
       </div>
-                </div>
+    </div>
 
 
 {% endblock %}
