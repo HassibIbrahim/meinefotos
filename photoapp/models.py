@@ -1,10 +1,7 @@
 from django.db import models
 from tinymce.models import HTMLField
 
-
 # Create your models here.
-
-
 class Location(models.Model):
     name = models.CharField(max_length=30)
 
@@ -22,7 +19,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Image(models.Model):
     image = models.ImageField(upload_to='images/', blank=True)
@@ -42,3 +38,9 @@ class Image(models.Model):
     def search_by_description(cls,search_term):
         images = cls.objects.filter(description__icontains=search_term)
         return images
+
+    @classmethod
+    def all_images(cls):
+        images = cls.objects.all()
+        return images
+
