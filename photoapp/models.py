@@ -1,6 +1,7 @@
 from django.db import models
 from tinymce.models import HTMLField
 
+
 # Create your models here.
 class Location(models.Model):
     name = models.CharField(max_length=30)
@@ -20,6 +21,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    @classmethod
+    def all_categories(cls):
+        categories=cls.objects.all()
+        return categories
+
 class Image(models.Model):
     image = models.ImageField(upload_to='images/', default=True)
     name = models.CharField(max_length=30)
@@ -27,7 +33,6 @@ class Image(models.Model):
     location=models.ForeignKey(Location,on_delete=models.CASCADE)
     category=models.ManyToManyField(Category)
     # pub_date = models.DateTimeField(auto_now_add=True)
-
 
     @classmethod
     def search_by_name(cls,search_term):
@@ -43,4 +48,3 @@ class Image(models.Model):
     def all_images(cls):
         images = cls.objects.all()
         return images
-

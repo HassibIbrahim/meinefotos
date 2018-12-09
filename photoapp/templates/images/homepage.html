@@ -5,15 +5,25 @@
 
 <div class="container">
 
+ 1111111
+          {% for category in categories %}
+
+    <a href="/?category={{category.id}}"> <button class="btn btn-lg btn-success">      #{{category.name}}</button></a>
+
+          {% endfor %}
+
+
+
 
   <div class="card-columns">
       {% for image in images %}
 
   <div class="card border-secondary">
-    <img class="card-img-top" src="{{image.image.url}}" class="img-responsive" alt="Image" size="100px200" type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image.id}}">    
+    <img class="card-img-top" src="{{image.image.url}}" class="img-responsive" alt="Image" size="100px200" type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image.id}}">
+
   </div>
 
-<!-- Modal -->
+    <!-- Modal -->
 <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -33,7 +43,6 @@
     </div>
   </div>
 </div>
-
       {% empty %}
   <div class="row">
     <h2 class="text-center">There is no images here</h2>
