@@ -13,13 +13,13 @@ h1 {
 }
 
 .modal-dialog {
-    width: 70%;
-    height: 50%;
-    padding: 0;
+    width: 60%;
+    height: 60%;
 }
 
 .modal-body {
-    height: 50%;
+    height: auto;
+    min-height: 100%;
 }
 
 h2 {
