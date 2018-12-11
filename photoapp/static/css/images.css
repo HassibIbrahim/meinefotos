@@ -6,6 +6,22 @@ h1 {
     opacity: 0.8;
 }
 
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: none;
+    }
+}
+
+.modal-dialog {
+    width: 70%;
+    height: 50%;
+    padding: 0;
+}
+
+.modal-body {
+    height: 50%;
+}
+
 h2 {
     font-family: 'Slabo 27px', serif;
 }
